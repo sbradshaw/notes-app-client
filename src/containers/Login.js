@@ -17,6 +17,7 @@ export default function Login(props) {
     try {
       await Auth.signIn(email, password);
       props.userHasAuthenticated(true);
+      props.history.push("/");
     } catch (e) {
       alert(e.message);
     }
@@ -29,6 +30,7 @@ export default function Login(props) {
           <ControlLabel>Email</ControlLabel>
           <FormControl
             autoFocus
+            placeholder="Email"
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
@@ -37,6 +39,7 @@ export default function Login(props) {
         <FormGroup controlId="password" bsSize="large">
           <ControlLabel>Password</ControlLabel>
           <FormControl
+            placeholder="Enter Password"
             value={password}
             onChange={e => setPassword(e.target.value)}
             type="password"
