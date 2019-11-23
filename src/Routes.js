@@ -3,14 +3,19 @@ import { Route, Switch } from "react-router-dom";
 import AppliedRoute from "./components/AppliedRoute";
 import Home from "./containers/Home";
 import Login from "./containers/Login";
+import NewNote from "./containers/NewNote";
+import Notes from "./containers/Notes";
 import NotFound from "./containers/NotFound";
 import Signup from "./containers/Signup";
-import NewNote from "./containers/NewNote";
 
 export default function Routes({ appProps }) {
   return (
     <Switch>
-      <AppliedRoute exact path="/" component={Home} appProps={appProps} />
+      <AppliedRoute
+        exact path="/"
+        component={Home}
+        appProps={appProps}
+      />
       <AppliedRoute
         exact path="/login"
         component={Login}
@@ -24,6 +29,11 @@ export default function Routes({ appProps }) {
       <AppliedRoute
         exact path="/notes/new"
         component={NewNote}
+        appProps={appProps}
+      />
+      <AppliedRoute
+        exact path="/notes/:id"
+        component={Notes}
         appProps={appProps}
       />
       { /* Catch all unmatched routes */ }
