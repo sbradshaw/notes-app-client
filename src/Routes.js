@@ -6,6 +6,7 @@ import Login from "./containers/Login";
 import NewNote from "./containers/NewNote";
 import Notes from "./containers/Notes";
 import NotFound from "./containers/NotFound";
+import Settings from "./containers/Settings";
 import Signup from "./containers/Signup";
 
 export default function Routes({ appProps }) {
@@ -34,6 +35,11 @@ export default function Routes({ appProps }) {
       <AppliedRoute
         exact path="/notes/:id"
         component={Notes}
+        appProps={appProps}
+      />
+      <AppliedRoute
+        exact path="/settings"
+        component={Settings}
         appProps={appProps}
       />
       { /* Catch all unmatched routes */ }
